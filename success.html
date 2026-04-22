@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Volviendo a la app...</title>
+</head>
+<body>
+
+<p>Redirigiendo a la app…</p>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const env = params.get("env");
+
+const scheme =
+  env === "dev"
+    ? "frenchsearch-dev://"
+    : "frenchsearch://";
+
+setTimeout(() => {
+  window.location.href = scheme;
+}, 300);
+</script>
+
+</body>
+</html>
